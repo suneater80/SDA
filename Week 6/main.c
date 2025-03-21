@@ -6,11 +6,11 @@
 int main() {
     List L1, L2;
 
-    // Inisialisasi list
+    // inisiasi list
     createList(&L1);
     createList(&L2);
 
-    // Menjalankan menu
+    // masuk ke menu ygy
     prosesMenu(&L1, &L2);
 
     return 0;

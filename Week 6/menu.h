@@ -3,10 +3,10 @@
 
 #include "nilaiMahasiswa.h"
 
-// Fungsi untuk menampilkan menu
+//untuk menampilkan menu
 void tampilkanMenu();
 
-// Fungsi untuk memproses pilihan pengguna
+//untuk memproses pilihan user
 void prosesMenu(List *L1, List *L2);
 
 #endif
