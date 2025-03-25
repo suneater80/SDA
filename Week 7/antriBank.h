@@ -4,29 +4,29 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Struktur Node untuk Queue
+//struktur node untuk Queue
 typedef struct Node {
     int nomorAntrian;
     struct Node *next;
 } Node;
 
-// Struktur Queue
+//struktur queque
 typedef struct {
     Node *front;
     Node *rear;
     int nextNumber;
 } Queue;
 
-// Fungsi untuk inisialisasi queue
+//inisiasi queeu
 void initQueue(Queue *q);
 
-// Fungsi untuk menambahkan pelanggan ke antrian (enqueue)
+//menambahkan pelanggan
 void enqueue(Queue *q);
 
-// Fungsi untuk memproses pelanggan (dequeue)
+//merespon pelanggan
 void dequeue(Queue *q);
 
-// Fungsi untuk mencetak antrian
+//cetak antrian
 void printQueue(Queue *q);
 
 #endif

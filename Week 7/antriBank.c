@@ -1,12 +1,12 @@
 #include "antriBank.h"
 
-// Inisialisasi queue
+//inisialisasi queue
 void initQueue(Queue *q) {
     q->front = q->rear = NULL;
     q->nextNumber = 1;
 }
 
-// Menambahkan pelanggan ke antrian
+//menambahkan pelangggan ke antrian
 void enqueue(Queue *q) {
     Node *newNode = (Node*)malloc(sizeof(Node));
     newNode->nomorAntrian = q->nextNumber;
@@ -24,7 +24,7 @@ void enqueue(Queue *q) {
     printQueue(q);
 }
 
-// Memproses pelanggan (yang paling depan)
+//memproses pelanggan (yang depan dulu)
 void dequeue(Queue *q) {
     if (q->front == NULL) {
         printf("Antrian kosong!\n");
@@ -43,7 +43,7 @@ void dequeue(Queue *q) {
     printQueue(q);
 }
 
-// Mencetak antrian saat ini
+//cetak antrian saat ini
 void printQueue(Queue *q) {
     if (q->front == NULL) {
         printf("Antrian: []\n");
@@ -62,7 +62,6 @@ void printQueue(Queue *q) {
     printf("]\n");
 }
 
-// Menu utama
 int main() {
     Queue q;
     initQueue(&q);
@@ -88,14 +87,14 @@ int main() {
                 printQueue(&q);
                 break;
             case 4:
-                printf("Program selesai.\n");
+                printf("tengkyu.\n");
                 break;
             default:
                 printf("Pilihan tidak valid!\n");
         }
     } while (choice != 4);
 
-    // Membersihkan memori jika antrian belum kosong
+    //membersihkan memori
     while (q.front != NULL) {
         dequeue(&q);
     }

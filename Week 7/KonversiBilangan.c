@@ -1,6 +1,6 @@
 #include "konversiBilangan.h"
 
-// Membuat stack baru
+//stack baru
 Stack* createStack(int capacity) {
     Stack *stack = (Stack*)malloc(sizeof(Stack));
     stack->capacity = capacity;
@@ -9,17 +9,17 @@ Stack* createStack(int capacity) {
     return stack;
 }
 
-// Mengecek apakah stack penuh
+//isfull?
 int isFull(Stack *stack) {
     return stack->top == stack->capacity - 1;
 }
 
-// Mengecek apakah stack kosong
+//isemptry?
 int isEmpty(Stack *stack) {
     return stack->top == -1;
 }
 
-// Menambahkan elemen ke stack
+//menambahkan elemen
 void push(Stack *stack, int value) {
     if (isFull(stack)) {
         printf("Stack penuh!\n");
@@ -28,7 +28,7 @@ void push(Stack *stack, int value) {
     stack->data[++stack->top] = value;
 }
 
-// Mengeluarkan elemen dari stack
+//mengeluarkan elemen
 int pop(Stack *stack) {
     if (isEmpty(stack)) {
         printf("Stack kosong!\n");
@@ -37,22 +37,22 @@ int pop(Stack *stack) {
     return stack->data[stack->top--];
 }
 
-// Konversi desimal ke biner
+//konversi decimal->biner
 void decimalToBinary(int decimal) {
     if (decimal == 0) {
         printf("0\n");
         return;
     }
 
-    Stack *stack = createStack(32); // Kapasitas stack untuk 32-bit
+    Stack *stack = createStack(32); //ini untuk 32bit ya
 
-    // Simpan sisa bagi ke stack
+    //sisa bagi disimpan ke staack
     while (decimal > 0) {
         push(stack, decimal % 2);
         decimal /= 2;
     }
 
-    // Keluarkan elemen stack untuk mendapatkan biner
+    //mengeluarkan elemen untuk mendapat kan biner
     printf("Hasil konversi: ");
     while (!isEmpty(stack)) {
         printf("%d", pop(stack));
@@ -63,7 +63,6 @@ void decimalToBinary(int decimal) {
     free(stack);
 }
 
-// Contoh penggunaan
 int main() {
     int decimal;
     printf("Masukkan bilangan desimal: ");

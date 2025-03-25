@@ -11,22 +11,21 @@ typedef struct Stack {
     int top;
 } Stack;
 
-// Fungsi untuk inisialisasi stack
 Stack* createStack(int capacity);
 
-// Fungsi untuk mengecek apakah stack penuh
+//apakah stack penuh?
 int isFull(Stack *stack);
 
-// Fungsi untuk mengecek apakah stack kosong
+//apakah stack kosong?
 int isEmpty(Stack *stack);
 
-// Fungsi untuk menambahkan elemen ke stack (push)
+//menambah elemen stack
 void push(Stack *stack, int value);
 
-// Fungsi untuk mengeluarkan elemen dari stack (pop)
+//mengeluarkan elemen dari stak
 int pop(Stack *stack);
 
-// Fungsi untuk mengonversi desimal ke biner
+//konversi decimal->biner
 void decimalToBinary(int decimal);
 
 #endif
