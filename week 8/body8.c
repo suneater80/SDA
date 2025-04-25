@@ -93,7 +93,7 @@ void tampilkanKota(kota A[], int idx) {
     address P = A[idx].p;
 
     if (P == NULL) {
-        printf("  [tidak ada nama orang]\n");
+        printf("[tidak ada nama orang]\n");
         return;
     }
 

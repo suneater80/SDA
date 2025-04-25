@@ -17,7 +17,7 @@ typedef struct city {
 
 
 
-// === Fungsi-Fungsi ADT ===
+// === Modul ADT ===
 
 //inisialisasi array kota
 void initKota(kota A[], int* n);
