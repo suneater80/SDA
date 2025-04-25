@@ -16,7 +16,7 @@ int main() {
     do {
         tampilkanMenu();
         if (scanf("%d", &pilihan) != 1) {
-            printf("Input tidak valid. Program akan berhenti.\n");
+            printf("Input tidak valid\n");
             break;
         }
         getchar();
