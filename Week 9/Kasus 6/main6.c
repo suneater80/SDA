@@ -3,7 +3,7 @@
 
 
 int main(){
-    
+    isi_Tree P;
 
     int pilihan;
     do {
@@ -50,8 +50,12 @@ int main(){
             case 10:
                 //
                 break;
-
+                
             case 11:
+                //
+                break;
+
+            case 12:
                 // keluar
                 printf("terima kasih telah mencoba\n");
                 break;
