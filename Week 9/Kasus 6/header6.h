@@ -1,5 +1,5 @@
-#ifndef Kasus6_H
-#define Kasus6_H
+#ifndef Header6_H
+#define Header6_H
 #include <stdio.h>
 #include "BOOLEAN.H"
 
@@ -21,7 +21,8 @@ typedef struct
 
 typedef nbtree isi_Tree[jml_maks+1];
 
-void create_tree(isi_Tree X, int jml_Node);
+void create_tree(isi_Tree *P, int jml_Node);
+void pengisian_tree(isi_Tree *P);
 boolean isEmpty(isi_Tree P);
 
 void preOrder(isi_Tree P);

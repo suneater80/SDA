@@ -1,9 +1,14 @@
 #include <stdio.h>
 #include "header6.h"
+#include "body6.c"
 
 
 int main(){
     isi_Tree P;
+    create_tree(&P, jml_maks);
+    pengisian_tree(&P);
+    
+    
 
     int pilihan;
     do {
@@ -17,6 +22,7 @@ int main(){
 
             case 2:
                 // 
+                preOrder(P);
                 break;
 
             case 3:
@@ -63,7 +69,7 @@ int main(){
             default:
                 printf("Pilihan tidak valid, coba lagi.\n");
         }
-    } while (pilihan != 11);
+    } while (pilihan != 12);
 
     return 0;
 }

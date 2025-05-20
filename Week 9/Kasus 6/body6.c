@@ -1,58 +1,91 @@
+#ifndef Body6_H
+#define Body6_H
 #include <stdio.h>
+#include <string.h>
 #include "header6.h"
 
 
-void create_tree(isi_Tree X, int jml_Node)
+void create_tree(isi_Tree *X, int jml_Node)
 {
-    X[jml_Node];
-    X[1].info  = 'A';
-    X[1].ps_fs = 2;
-    X[1].ps_nb = 0;
-    X[1].ps_pr = 0;
-    
-    X[2].info  = 'B';
-    X[2].ps_fs = 4;
-    X[2].ps_nb = 3;
-    X[2].ps_pr = 1;
-
-    X[3].info  = 'C';
-    X[3].ps_fs = 6;
-    X[3].ps_nb = 0;
-    X[3].ps_pr = 1;
-
-    X[4].info  = 'D';
-    X[4].ps_fs = 0;
-    X[4].ps_nb = 5;
-    X[4].ps_pr = 2;
-
-    X[5].info  = 'E';
-    X[5].ps_fs = 0;
-    X[5].ps_nb = 0;
-    X[5].ps_pr = 2;
-
-    X[6].info  = 'F';
-    X[6].ps_fs = 0;
-    X[6].ps_nb = 7;
-    X[6].ps_pr = 3;
-
-    X[7].info  = 'G';
-    X[7].ps_fs = 0;
-    X[7].ps_nb = 8;
-    X[7].ps_pr = 3;
-
-    X[8].info  = 'H';
-    X[8].ps_fs = 0;
-    X[8].ps_nb = 0;
-    X[8].ps_pr = 3;
+    for (int i = 1; i <= jml_Node; i++)
+    {
+        (*X)[i].info  = nil;
+        (*X)[i].ps_fs = nil;
+        (*X)[i].ps_nb = nil;
+        (*X)[i].ps_pr = nil;   
+    }
+       
 }
-
+void pengisian_tree(isi_Tree *P){
+    (*P)[1].info  = 'A';
+    (*P)[1].ps_fs = 2;
+    (*P)[1].ps_nb = 0;
+    (*P)[1].ps_pr = 0;
+    (*P)[2].info  = 'B';
+    (*P)[2].ps_fs = 4;
+    (*P)[2].ps_nb = 3;
+    (*P)[2].ps_pr = 1;
+    (*P)[3].info  = 'C';
+    (*P)[3].ps_fs = 6;
+    (*P)[3].ps_nb = 0;
+    (*P)[3].ps_pr = 1;
+    (*P)[4].info  = 'D';
+    (*P)[4].ps_fs = 0;
+    (*P)[4].ps_nb = 5;
+    (*P)[4].ps_pr = 2;
+    (*P)[5].info  = 'E';
+    (*P)[5].ps_fs = 0;
+    (*P)[5].ps_nb = 0;
+    (*P)[5].ps_pr = 2;
+    (*P)[6].info  = 'F';
+    (*P)[6].ps_fs = 0;
+    (*P)[6].ps_nb = 7;
+    (*P)[6].ps_pr = 3;
+    (*P)[7].info  = 'G';
+    (*P)[7].ps_fs = 0;
+    (*P)[7].ps_nb = 8;
+    (*P)[7].ps_pr = 3;
+    (*P)[8].info  = 'H';
+    (*P)[8].ps_fs = 0;
+    (*P)[8].ps_nb = 0;
+    (*P)[8].ps_pr = 3;
+}
 
 boolean isEmpty(isi_Tree P)
 {
     return(P[1].info == nil);
 }
 
-void preOrder(isi_Tree P);
+void preOrder(isi_Tree P){
+    if (!isEmpty(P))
+    {
+        int pcur = 1;
+        boolean resmi;
+        
+        printf("%c", P[pcur].info);
+        resmi = true;
+        do
+        {
+            printf("4\n");
+            if (P[pcur].ps_fs != nil && resmi)
+            {
+                pcur = P[pcur].ps_fs;
+                printf("%c", P[pcur].info);
+            }else if (P[pcur].ps_nb != nil)
+            {
+                pcur = P[pcur].ps_nb;
+                printf("%c", P[pcur].info);
+                resmi = true;
+            }else
+            {
+                pcur = P[pcur].ps_pr;
+                resmi = false;          //numpang lewat dsini
+            }
+        } while (P[pcur].ps_pr != nil);
+    }else printf("Tree masih kosong\n");
+    
+}
+
 void inOrder(isi_Tree P);
 void postOrder(isi_Tree P);
 void levelOrder(isi_Tree X, int maks_node);
@@ -67,7 +100,7 @@ int max(infotype data1, infotype data2);
 
 void tampilkanMenu() {
     printf("\n=== MENU ===\n");
-    printf("1. Input Data Tree");
+    printf("1. Input Data Tree\n");
     printf("2. Traversal PreOrder\n");
     printf("3. Traversal InOrder\n");
     printf("4. Traversal PostOrdet\n");
@@ -77,8 +110,10 @@ void tampilkanMenu() {
     printf("8. Jumlah Daun/Leaf\n");
     printf("9. Mencari Level node Tree\n"); 
     printf("10.Kedalaman Tree\n");
-    printf("11.membandingkan 2 node Tree");
-    printf("12.Menampilkan bentuk Tree");
-    printf("13.Exit");
+    printf("11.membandingkan 2 node Tree\n");
+    printf("12.Menampilkan bentuk Tree\n");
+    printf("13.Exit\n");
     printf("Pilih menu: ");
 }
+
+#endif
