@@ -49,6 +49,9 @@ int getLevelOfNodeByIndex(isi_Tree P, int node_idx);
 int getLevelOfNodeByInfo(isi_Tree P, infotype X_cari);
 int findNodeByInfo(isi_Tree P, infotype X_cari);
 
+void tampilkanBentukTree(isi_Tree P);
+void displayTreeStructureRecursive(isi_Tree P, int node_idx, int indent);
+
 //Queue
 boolean isEmptyQueue(Queue Q);
 void Dequeue(Queue *Q);

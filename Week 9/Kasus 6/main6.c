@@ -77,6 +77,7 @@ int main(){
                 
             case 11:
                 //
+                tampilkanBentukTree(P);
                 break;
 
             case 12:

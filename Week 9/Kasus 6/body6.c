@@ -338,6 +338,35 @@ boolean compareTree(isi_Tree P1, isi_Tree P2) {
     return true;
 }
 
+void tampilkanBentukTree(isi_Tree P) {
+    if (isEmpty(P)) {
+        printf("Tree masih kosong.\n");
+        return;
+    }
+    printf("Struktur Tree:\n");
+    displayTreeStructureRecursive(P, 1, 0);
+}
+
+void displayTreeStructureRecursive(isi_Tree P, int node_idx, int indent) {
+    if (node_idx == nil || P[node_idx].info == nil) {
+        return;
+    }
+
+    // Print indentation
+    for (int i = 0; i < indent; i++) {
+        printf("  "); 
+    }
+
+    // Print node info
+    printf("|- %c\n", P[node_idx].info);
+
+    int current_child_idx = P[node_idx].ps_fs;
+    while (current_child_idx != nil && P[current_child_idx].info != nil) {
+        displayTreeStructureRecursive(P, current_child_idx, indent + 1);
+        current_child_idx = P[current_child_idx].ps_nb; 
+    }
+}
+
 //enqueue
 void Dequeue(Queue *Q){
     if ((*Q).front == - 1 || (*Q).front > (*Q).rear)
