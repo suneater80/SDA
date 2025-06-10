@@ -17,6 +17,18 @@ typedef struct {
     int nilai;
 } data;
 
+
+
+
+
+
+
+
+
+
+
+
+
 //definisi node dan list
 typedef struct Node *address;
 typedef struct Node {
@@ -27,6 +39,27 @@ typedef struct Node {
 typedef struct {
     address first;   //pointer ke node pertama
 } List;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //                      MENGOLAH MEMORY
 //alokasi memori untuk node baru
